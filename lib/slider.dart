@@ -1,31 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/chart.dart' as pie;
+import 'package:myapp/schedule.dart';
+import 'package:provider/provider.dart';
 
-
-class SimpleSlider extends StatefulWidget {
-  @override
-  _SimpleSliderState createState() {
-    return _SimpleSliderState();
-  }
-}
-
-class _SimpleSliderState extends State {
-  int _value = 9;
+class SimpleSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Slider(
-        value:_value.toDouble(),
-        min:0.0,
-        max:10.0,
-        divisions: 10,
-        label: '$_value',
-        onChanged: (double newValue){
-          setState(() {
-            
-            _value = newValue.round();
-          });
-        },
+      child: Consumer<MySchedule>(
+        builder: (context, state, _) => Slider(
+            value: state.stateManagementTime,
+            min: 0.0,
+            max: 100.0,
+            label: '${state.stateManagementTime}',
+            onChanged: (double newValue) => {
+                  Provider.of<MySchedule>(context, listen: false)
+                      .stateManagementTime = newValue,
+                }),
       ),
     );
   }
