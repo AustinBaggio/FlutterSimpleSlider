@@ -11,14 +11,3 @@ class SimplePieChart extends StatelessWidget {
             Center(child: Text("${state.stateManagementTime}")));
   }
 }
-
-// class SimplePieChart extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Consumer<MySchedule>(
-//       builder: (context, state, _) => charts.PieChart(
-//         state.seriesPieData,
-//       ),
-//     );
-//   }
-// }
