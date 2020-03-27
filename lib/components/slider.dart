@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/schedule.dart';
 import 'package:provider/provider.dart';
+import '../models/schedule.dart';
 
 class SimpleSlider extends StatelessWidget {
   @override

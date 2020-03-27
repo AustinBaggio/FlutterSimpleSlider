@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/slider.dart';
-import 'package:myapp/chart.dart';
+import '../components/slider.dart';
+import '../components/chart.dart';
 
 class HomePage extends StatelessWidget {
   @override
